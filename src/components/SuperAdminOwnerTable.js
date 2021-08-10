@@ -6,6 +6,19 @@ const TableRow = ({ user }) => {
 
     const { users, setUsers } = useContext(AuthContext)
 
+    const handleUserActive = (event) => {
+        
+        setUsers(users.map( eachUser => {
+            if (eachUser.username === user.username) {
+                return {
+                    ...eachUser,
+                    isActive: event.target.checked
+                }
+            }
+            return eachUser
+        }))
+    }
+
     return <>
         <tr>
             <td>
@@ -18,6 +31,7 @@ const TableRow = ({ user }) => {
                 <input
                     type='checkbox'
                     checked={user.isActive} 
+                    onChange={handleUserActive}
                 />
             </td>
             <td>
@@ -40,7 +54,7 @@ function SuperAdminOwnerTable() {
                 <th>Type</th>
             </thead>
             <tbody>
-                {users.filter(user => user.level != 0).map(user => <TableRow user={user} />)}
+                {users.filter(user => user.level !== 0).map(user => <TableRow user={user} />)}
             </tbody>
         </table>
     </>

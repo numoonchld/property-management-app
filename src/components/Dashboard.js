@@ -8,7 +8,6 @@ import UserArea from './UserArea'
 function Dashboard() {
 
     const { loggedInUser, isAuthenticated } = useContext(AuthContext)
-    console.log(loggedInUser, isAuthenticated)
 
     if (isAuthenticated && loggedInUser) {
 
