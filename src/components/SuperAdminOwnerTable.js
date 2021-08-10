@@ -12,6 +12,9 @@ const TableRow = ({ user }) => {
                 {user.username}
             </td>
             <td>
+                {user.password}
+            </td>
+            <td>
                 <input
                     type='checkbox'
                     checked={user.isActive} 
@@ -32,6 +35,7 @@ function SuperAdminOwnerTable() {
         <table className="table mt-3 mb-5 border ">
             <thead>
                 <th>Username</th>
+                <th>Password</th>
                 <th>Active</th>
                 <th>Type</th>
             </thead>

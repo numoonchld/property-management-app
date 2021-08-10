@@ -19,10 +19,10 @@ function Dashboard() {
         if (currentuserLevel === 0) {
             return <SuperAdminArea loggedInUser={loggedInUser} />
         }
-        if (currentuserLevel === 1) {
+        if (currentuserLevel === `1`) {
             return <OwnerArea loggedInUser={loggedInUser} />
         }
-        if (currentuserLevel === 3) {
+        if (currentuserLevel === `2`) {
             return <UserArea loggedInUser={loggedInUser} />
         }
 
