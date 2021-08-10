@@ -35,7 +35,6 @@ function Login({history}) {
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Username</label>
                     <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={username} onChange={(event) => {setUsername(event.target.value)}}/>
-                    
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputPassword1">Password</label>
