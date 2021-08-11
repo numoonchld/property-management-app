@@ -13,13 +13,13 @@
 
 ## App Usage
 
-#### Login Page
+### Login Page
 
 - supersuer login:
     - username: `superuser0`
     - password: `0000`
 
-#### Super Admin Dashboard 
+### Super Admin Dashboard 
 
 *Note*
 - create atleast one owner and one user to explore the app 
@@ -48,7 +48,7 @@
 - set owner from drop down
 - set price of property
 
-#### Owner Dashboard
+### Owner Dashboard
 
 - use owner login that you created in the superadmin dashboard 
 
@@ -61,7 +61,7 @@
 - lists all the properties added for the logged in owner 
 - owner may approve or unapprove property
 
-#### User Dashboard 
+### User Dashboard 
 
 **Properties For Sale Table**
 - listing of all the approved properties available for sale
