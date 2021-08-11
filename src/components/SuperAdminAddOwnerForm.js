@@ -12,10 +12,25 @@ function SuperAdminAddOwnerForm() {
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        setUsers([...users, { username: newUserName, password: newUserPassword, isActive: true, level: newUserLevel }])
-        setNewUserName('')
-        setNewUserPassword('')
-        setNewUserLevel('')
+        const existingUserMatch = users.filter(user => user.username === newUserName)
+
+        if (existingUserMatch.length === 0) {
+
+            if ( newUserName !== `` && newUserPassword !== `` && newUserLevel !== `` && newUserLevel !== `---` ) {
+                setUsers([...users, { username: newUserName, password: newUserPassword, isActive: true, level: newUserLevel }])
+                setNewUserName('')
+                setNewUserPassword('')
+                setNewUserLevel('')
+            }
+            else {
+                window.alert(`Input fields can't be blank`)
+            }
+
+        }
+        else {
+            window.alert('Username already exists!')
+        }
+
     }
 
     return <>

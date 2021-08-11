@@ -14,16 +14,38 @@ function SuperAdminAddPropertyForm() {
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        setProperties([...properties, {
-            propertyName: newPropertyName,
-            addedBy: loggedInUser.username,
-            propertyOwner: newPropertyOwner,
-            isActive: true,
-            isApproved: false,
-            isSold: false,
-            price: newPropertyPrice,
-            propertyBuyer: null
-        }])
+        const existingPropertyMatch = properties.filter(property => property.propertyName === newPropertyName)
+
+        if (existingPropertyMatch.length === 0) {
+
+            if (newPropertyName !== `` && newPropertyOwner !== `` && newPropertyOwner !== `---` && newPropertyPrice !== ``) {
+                setProperties([...properties, {
+                    propertyName: newPropertyName,
+                    addedBy: loggedInUser.username,
+                    propertyOwner: newPropertyOwner,
+                    isActive: true,
+                    isApproved: false,
+                    isSold: false,
+                    price: newPropertyPrice,
+                    propertyBuyer: null
+                }])
+                setNewPropertyName(``)
+                setNewPropertyOwner(``)
+                setNewPropertyPrice(``)
+            }
+            else {
+                window.alert(`Input fields can't be empty`)
+            }
+
+
+
+        }
+        else {
+
+            window.alert('Property already exists!')
+        }
+
+
     }
 
     return <>
@@ -45,7 +67,7 @@ function SuperAdminAddPropertyForm() {
                         value={newPropertyOwner}
                         onChange={event => setNewPropertyOwner(event.target.value)}>
                         <option value="">---</option>
-                        {users.filter(user => user.level === `1`).map(user => <option value={user.username}>{user.username} </option>)}
+                        {users.filter(user => user.level === `1` && user.isActive === true).map(user => <option value={user.username}>{user.username} </option>)}
                     </select>
                 </div>
                 <div className="form-group">
