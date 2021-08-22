@@ -11,9 +11,10 @@
 
 - [Generated at time of writing this readme](https://jqj85.csb.app/)
 
-### Vercel Deployment
+### Online Deployments
 
-- [Property Manegement App](https://property-management-app.vercel.app/dashboard)
+- [Vercel Deployment](https://property-management-app.vercel.app/dashboard)
+- [Netlify Deployment](https://property-management-app.netlify.app/)
 
 ## App Usage
 
