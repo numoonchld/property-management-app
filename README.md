@@ -11,6 +11,10 @@
 
 - [Generated at time of writing this readme](https://jqj85.csb.app/)
 
+### Vercel Deployment
+
+- [Property Manegement App](https://property-management-app.vercel.app/dashboard)
+
 ## App Usage
 
 ### Login Page
