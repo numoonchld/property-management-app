@@ -18,19 +18,16 @@ function Dashboard() {
         if (currentuserLevel === 0) {
             return <SuperAdminArea loggedInUser={loggedInUser} />
         }
+            
+        // OWNER CONTENT
         if (currentuserLevel === `1`) {
             return <OwnerArea loggedInUser={loggedInUser} />
         }
+        // USER CONTENT
         if (currentuserLevel === `2`) {
             return <UserArea loggedInUser={loggedInUser} />
         }
-
-
-
-        // OWNER CONTENT
-        // USER CONTENT
-
-
+            
     }
 
 
